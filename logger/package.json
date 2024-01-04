@@ -1,0 +1,12 @@
+{
+  "name": "log-monitor-main",
+  "version": "1.0.0",
+  "description": "This problem requires you to implement a log watching solution (similar to the tail -f command in UNIX). However, in this case, the log file is hosted on a remote machine (the same machine as your server code). The log file is in append-only mode.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

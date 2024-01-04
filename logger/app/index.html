@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tail -f</title>
+</head>
+<body>
+  <header>
+    <h1>Logger App</h1>
+  </header>
+  <main>
+    <div id="message"></div>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const socket = io('ws://localhost:3000');
+
+      socket.on('update-log', function(data) {
+        console.log(data);
+        const messages = document.getElementById('message');
+        data.forEach(elem => {
+          const par = document.createElement('p');
+          par.textContent = elem;
+          messages.appendChild(paragraph);
+        });
+      });
+
+      socket.on('init', function(data) {
+        console.log(data);
+        const messages = document.getElementById('message');
+        data.forEach(elem => {
+          const par = document.createElement('p');
+          par.textContent = elem;
+          messages.appendChild(paragraph);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
